@@ -1,0 +1,147 @@
+//////////////////////////
+// Cleafix
+// ---
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+//////////////////////////
+// Visibility
+// ---
+@mixin visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+@mixin invisible {
+  visibility: hidden;
+}
+
+
+//////////////////////////
+// Pseudo Elements
+// ---
+@mixin pseudo-block {
+  content: '';
+  display: inline-block;
+}
+
+//////////////////////////
+// Size
+// ---
+// @param [number] $width: width
+// @param [number] $height ($width): height
+// ---
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+//////////////////////////
+// TRBL / Positioning
+// ---
+
+// Position helper mixin
+// http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
+@mixin position($position, $args: ()) {
+  $offsets: top right bottom left;
+  position: $position;
+  
+  @each $offset in $offsets {
+    $index: index($args, $offset);
+    
+    @if $index {
+      @if $index == length($args) {
+        #{$offset}: 0;
+      }
+      @else {
+        $next: nth($args, $index + 1);
+        @if is-valid-length($next) {
+          #{$offset}: $next;
+        }
+        @else if index($offsets, $next) {
+          #{$offset}: 0;
+        }
+        @else {
+          @warn "Invalid value `#{$next}` for offset `#{$offset}`.";
+        }
+      }
+    }
+  }
+}
+ 
+// Shorthands
+// ---
+@mixin absolute($args: ()) {
+  @include position(absolute, $args);
+}
+ 
+@mixin fixed($args: ()) {
+  @include position(fixed, $args);
+}
+ 
+@mixin relative($args: ()) {
+  @include position(relative, $args);
+}
+
+
+//////////////////////////
+// CSS Triangle
+// ---
+// @param [string] $direction: arrow direction
+// @param [list] $position: list of offsets and values
+// @param [color] $color (inherit): arrow color
+// @param [number] $size (1em): arrow size
+// ---
+@mixin triangle($direction, $position, $color: inherit, $size: 1em) {
+  // Make sure the direction is valid
+  @if not index(top right bottom left, $direction) {
+    @warn "Direction must be one of top, right, bottom or left.";
+  }
+
+  @else {
+    @include absolute($position); // Position
+    @include size(0); // Size
+    content: '';
+    z-index: 2;
+
+    @if($color == 'inherit') {
+      border-#{opposite-direction($direction)}: $size solid transparent;
+      border-#{opposite-direction($direction)}-color: inherit;
+    }
+    @else {
+      border-#{opposite-direction($direction)}: $size solid $color;
+    }
+    $perpendicular-borders: $size solid transparent;
+    
+    @if $direction == top or $direction == bottom {
+      border-left:   $perpendicular-borders;
+      border-right:  $perpendicular-borders;
+    }
+
+    @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top:    $perpendicular-borders;
+    }
+  }
+}

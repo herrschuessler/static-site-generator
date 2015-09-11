@@ -1,0 +1,58 @@
+{{#hasMixin}}@mixin {{mixinName}} {
+  background: url({{{sprite}}}) no-repeat;
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  border-radius: 0;
+}
+
+{{#hasCommon}}.{{commonName}} {
+  @include {{mixinName}};
+}
+
+{{/hasCommon}}{{/hasMixin}}
+{{^hasMixin}}{{#hasCommon}}.{{/hasCommon}}{{^hasCommon}}%{{/hasCommon}}{{commonName}} {
+  background: url({{{sprite}}}) no-repeat;
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  border-radius: 0;
+}
+{{/hasMixin}}
+
+{{#shapes}}
+
+{{#selector.shape}}%{{expression}}{{^last}},
+{{/last}}{{/selector.shape}} {
+  {{^hasCommon}}@extend %{{commonName}};{{/hasCommon}}
+  background-position: {{position.relative.xy}};
+  {{#dimensions.inline}}
+  width: {{width.outer}}px;
+  height: {{height.outer}}px;
+  {{/dimensions.inline}}
+}
+
+@mixin {{#selector.shape}}{{expression}}{{/selector.shape}} {
+  background-position: {{position.relative.xy}};
+  {{#dimensions.inline}}
+  width: {{width.outer}}px;
+  height: {{height.outer}}px;
+  {{/dimensions.inline}}
+}
+
+{{#dimensions.extra}}
+{{#selector.dimensions}}%{{expression}}{{^last}},
+{{/last}}{{/selector.dimensions}} {
+  width: {{width.outer}}px;
+  height: {{height.outer}}px;
+}
+
+@mixin {{#selector.dimensions}}{{expression}}{{/selector.dimensions}} {
+  width: {{width.outer}}px;
+  height: {{height.outer}}px;
+}
+
+{{/dimensions.extra}}
+{{/shapes}}
