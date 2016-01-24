@@ -3,7 +3,6 @@ if(!config.tasks.html) return
 
 var gulp         = require('gulp')
 var jade         = require('gulp-jade')
-var browserSync  = require('browser-sync')
 var handleErrors = require('../lib/handleErrors')
 var path         = require('path')
 

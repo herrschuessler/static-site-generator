@@ -1,14 +1,12 @@
-var gulp            = require('gulp')
-var del             = require('del')
-var path            = require('path')
+var config        = require('../config')
 
-var paths = {
-  root: path.join(config.root.dev)
-}
+var gulp          = require('gulp')
+var del           = require('del')
+
 var cleanDevTask = function(cb) {
-  del([
-    paths.root
-  ]);
+  del([ config.root.dev ]).then(function (paths) {
+    cb()
+  })
 }
 
 gulp.task('dev:clean', cleanDevTask)

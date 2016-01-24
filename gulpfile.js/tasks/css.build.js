@@ -2,7 +2,6 @@ var config       = require('../config')
 if(!config.tasks.css) return
 
 var gulp         = require('gulp')
-var browserSync  = require('browser-sync')
 var sass         = require('gulp-sass')
 var sassGlob     = require('gulp-sass-glob')
 var handleErrors = require('../lib/handleErrors')

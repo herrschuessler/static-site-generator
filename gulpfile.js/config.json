@@ -18,6 +18,24 @@
     "html": {
       "src": "jade",
       "dest": "./"
+    },
+
+    "svgSprite": {
+      "symbol": {
+        "src": "svg/symbol"
+      },
+      "css": {
+        "src": "svg/css"
+      },
+      "dest": "img/svg-sprites"
+    },
+
+    "assets": {
+      "src": [
+        "src/img/**/*",
+        "src/fonts/**/*",
+        "src/favicon.ico"
+      ]
     }
   }
 }
