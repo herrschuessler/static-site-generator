@@ -44,5 +44,6 @@ node_modules
 # Staging files     #
 ######################
 stage
+public
 src/sass/svg
 src/sass/vendor-bower
