@@ -5,6 +5,8 @@
     "build": "./public"
   },
 
+  "templates": "gulpfile.js/templates",
+
   "tasks": {
 
     "css": {

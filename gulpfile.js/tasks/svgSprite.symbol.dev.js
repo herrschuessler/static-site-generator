@@ -9,10 +9,10 @@ var path            = require('path')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.svgSprite.symbol.src, '*.svg'),
-  dest: path.join(config.tasks.svgSprite.dest, 'symbol.svg')
+  sprite: path.join(config.tasks.svgSprite.dest, 'symbol.svg')
 }
 
-var svgConfigSymbol = {
+var svgSymbolSpriteConfig = {
   svg: {
     "xmlDeclaration": false,
     "doctypeDeclaration": false,
@@ -21,16 +21,16 @@ var svgConfigSymbol = {
   mode: {
     symbol: {
       dest: config.root.dev,
-      sprite: paths.dest
+      sprite: paths.sprite
     }
   }
 }
 
-var svgSymbolSpriteDevTask = function(cb) {
+var svgSymbolSpriteDevTask = function() {
   return gulp.src(paths.src)
-    .pipe(svgSprite(svgConfigSymbol))
+    .pipe(svgSprite(svgSymbolSpriteConfig))
     .on('error', handleErrors)
-    .pipe(gulp.dest(config.root.dev))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream())
 }
 
