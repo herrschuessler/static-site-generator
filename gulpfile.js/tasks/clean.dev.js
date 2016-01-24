@@ -5,13 +5,13 @@ var del           = require('del')
 var path            = require('path')
 
 var paths = {
-  svgSpriteScss: path.join(config.root.src, config.tasks.svgSprite.css.scss),
+  svgSpriteCss: path.join(config.root.src, config.tasks.svgCssSprite.css)
 }
 
 var cleanDevTask = function(cb) {
   del([
     config.root.dev,
-    paths.svgSpriteScss
+    paths.svgSpriteCss
   ]).then(function (paths) {
     cb()
   })

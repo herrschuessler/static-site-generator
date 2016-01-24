@@ -14,31 +14,45 @@
       "dest": "css",
       "autoprefixer": {
         "browsers": ["last 3 versions","ie 9"]
-      }
+      },
+      "extensions": ["sass", "scss", "css"]
     },
 
     "html": {
       "src": "jade",
-      "dest": "./"
+      "dest": "./",
+      "extensions": ["jade"]
     },
 
-    "svgSprite": {
-      "symbol": {
-        "src": "svg/symbol"
-      },
-      "css": {
-        "src": "svg/css",
-        "scss": "sass/02-tools/_generated.tool.svgsprites.scss"
-      },
-      "dest": "img/svg-sprites"
+    "js": {
+      "src": "js",
+      "dest": "js",
+      "extensions": ["js"]
     },
 
-    "assets": {
-      "src": [
-        "src/img/**/*",
-        "src/fonts/**/*",
-        "src/favicon.ico"
-      ]
+    "svgCssSprite": {
+      "src": "svg/css",
+      "css": "sass/02-tools/_generated.tool.svgsprites.scss",
+      "dest": "img/svg-sprites",
+      "extensions": ["svg"]
+    },
+
+    "svgSymbolSprite": {
+      "src": "svg/symbol",
+      "dest": "img/svg-sprites",
+      "extensions": ["svg"]
+    },
+
+    "images": {
+      "src": "img",
+      "dest": "img",
+      "extensions": ["jpg", "png", "svg", "gif"]
+    },
+
+    "fonts": {
+      "src": "fonts",
+      "dest": "fonts",
+      "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
     }
   }
 }

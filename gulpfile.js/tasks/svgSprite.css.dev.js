@@ -1,5 +1,5 @@
 var config        = require('../config')
-if(!config.tasks.svgSprite.css) return
+if(!config.tasks.svgCssSprite) return
 
 var gulp            = require('gulp')
 var svgSprite       = require('gulp-svg-sprite')
@@ -8,11 +8,11 @@ var handleErrors    = require('../lib/handleErrors')
 var path            = require('path')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.svgSprite.css.src, '*.svg'),
+  src: path.join(config.root.src, config.tasks.svgCssSprite.src, '*.svg'),
   dest: path.join(config.root.dev, config.tasks.css.dest),
-  sprite: path.join('../', config.tasks.svgSprite.dest, 'sprite.svg'),
-  scss: path.join('../../', config.root.src, config.tasks.svgSprite.css.scss),
-  template: path.join(config.templates, 'svgSprite.template.scss')
+  sprite: path.join('../', config.tasks.svgCssSprite.dest, 'sprite.svg'),
+  scss: path.join('../../', config.root.src, config.tasks.svgCssSprite.css),
+  template: path.join(config.templates, 'svgCssSprite.template.scss')
 }
 
 var svgCssSpriteConfig = {

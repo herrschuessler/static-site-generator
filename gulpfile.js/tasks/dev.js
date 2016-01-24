@@ -4,8 +4,8 @@ var runSequence     = require('run-sequence')
 var devTask = function(cb) {
   runSequence(
     'dev:clean',
-    'dev:svg',
-    [ 'dev:css', 'dev:html', 'dev:js', 'dev:assets'],
+    ['dev:svg:css','dev:svg:symbol'],
+    [ 'dev:css', 'dev:html', 'dev:js', 'dev:fonts', 'dev:images'],
     cb)
 }
 
