@@ -1,0 +1,16 @@
+//////////////////////////
+// SUSY
+//////////////////////////
+
+$susy: (
+  math: fluid,
+  output: float,
+  gutter-position: inside-static,
+  container: 1280px,
+  container-position: center,
+  columns: 12,
+  column-width: 1.8rem,
+  gutters: 2,
+  global-box-sizing: border-box,
+  last-flow: to
+);

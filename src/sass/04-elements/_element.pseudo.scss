@@ -1,0 +1,32 @@
+//////////////////////////
+// selection
+//////////////////////////
+::-moz-selection {
+	background: $color_brand;
+	color: #fff;
+}
+::selection {
+	background: $color_brand;
+	color: #fff;
+}
+
+//////////////////////////
+// placeholder
+//////////////////////////
+::-webkit-input-placeholder {
+  color: $color_placeholder;
+}
+:-moz-placeholder {
+  color: $color_placeholder;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: $color_placeholder;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: $color_placeholder;
+}
+.placeholder {
+  color: $color_placeholder;
+}

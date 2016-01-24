@@ -125,8 +125,8 @@ var svgConfigSymbol = {
 // Sass Task
 gulp.task('stage:css', function () {
   return gulp.src(dev.scss)
-      .pipe(plugins.changed(stage.css))
       .pipe(plugins.sourcemaps.init())
+      .pipe(plugins.sassGlob())
       .pipe(plugins.sass({
         outputStyle: 'nested'
       }))

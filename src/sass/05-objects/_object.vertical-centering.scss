@@ -1,0 +1,13 @@
+//////////////////////////
+// Vertical centering multiline
+//////////////////////////
+.vc-wrap {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+.vc {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}

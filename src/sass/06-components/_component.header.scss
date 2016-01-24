@@ -1,0 +1,60 @@
+.doc-header {
+  position: relative;
+  background: $color_fond;
+  z-index: 100;
+
+  &::after {
+    content: '';
+    display: block;
+    height: 30px;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    left: 0;
+    background: transparent url('../img/header-border.png') repeat-x center bottom;
+    
+    @include breakpoint($br_2x) {
+      background: transparent url('../img/header-border@2x.png') repeat-x center bottom / 720px 30px;
+    }
+  }
+}
+
+.l-doc-header {
+  position: relative;
+}
+
+// logo
+.header-logo {
+  margin: 0 auto;
+  width: 240px;
+  max-width: 50%;
+  padding: $sp_small 0 $sp_tiny 0;
+
+  @include breakpoint($br_phablet) {
+    padding: $sp_base 0 $sp_small 0;
+  }
+}
+
+.header-logo__img {
+  display: block;
+  width: 100%;
+}
+
+// navigation + lang
+.header-nav,
+.header-lang {
+  position: absolute;
+  top: $sp_base;
+
+  @include breakpoint($br_phablet) {
+    top: $sp_medium;
+  }
+}
+
+.header-nav {
+  left: $sp_base;
+}
+
+.header-lang {
+  right: $sp_base;
+}

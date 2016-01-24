@@ -1,0 +1,31 @@
+//////////////////////////
+// typography related classes
+//////////////////////////
+.mute {
+	color: $color_mute;
+}
+
+.left {
+	text-align: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.hyphens {
+	hyphens: auto;
+}
+
+.small {
+	font-size: $fs_tiny;
+	line-height: $lh_small;
+}
+
+.nobr {
+	white-space: nowrap;
+}

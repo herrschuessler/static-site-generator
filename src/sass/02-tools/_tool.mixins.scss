@@ -40,9 +40,14 @@
 //////////////////////////
 // Pseudo Elements
 // ---
-@mixin pseudo-block {
+@mixin pseudo-inline-block {
   content: '';
   display: inline-block;
+}
+
+@mixin pseudo-block {
+  content: '';
+  display: block;
 }
 
 //////////////////////////

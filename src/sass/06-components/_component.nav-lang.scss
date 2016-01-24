@@ -1,0 +1,30 @@
+$flag-ratio: 1.5;
+$flag-height: 2rem;
+
+.nav-lang__list {
+  @include clearfix;
+  margin: $sp_tiny 0 0 0;
+}
+
+.nav-lang__item {
+  float: left;
+}
+
+.nav-lang__a {
+  @extend %ir;
+  @extend %box-shadow;
+  display: block;
+  width: $flag-height * $flag-ratio;
+  height: $flag-height;
+  background: url('../img/lang.jpg') no-repeat;
+  background-size: ($flag-height * $flag-ratio * 2) $flag-height;
+  border-radius: $border_nano;
+
+  &.nav-lang__a--fr {
+    background-position: right top; 
+  }
+
+  &.nav-lang__a--active {
+    display: none;
+  }
+}

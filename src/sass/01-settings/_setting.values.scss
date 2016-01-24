@@ -1,0 +1,39 @@
+//////////////////////////
+// dimensions
+//////////////////////////
+
+//layout
+$w_min:     320px;
+$w_small:   600px;
+$w_medium:  768px;
+$w_large:   980px;
+$w_max:     1280px;
+
+// space
+$sp_nano:   0.3rem;
+$sp_tiny:   0.6rem;
+$sp_small:  1.2rem;
+$sp_base:   1.8rem;
+$sp_medium: 2.4rem;
+$sp_large:  3.0rem;
+$sp_huge:   3.6rem;
+$sp_mega:   4.8rem;
+$sp_giga:   6.0rem;
+
+// border (radius)
+$border_nano:   1px;
+$border_tiny:   2px;
+$border_small:  3px;
+$border_base:   6px;
+
+
+//////////////////////////
+// animation speed
+//////////////////////////
+$s_blink:     .1s;
+$s_fast:      .25s;
+$s_normal:    .5s;
+$s_slow:      .75s;
+$s_tortoise:   1.5s;
+$s_slug:       3s;
+

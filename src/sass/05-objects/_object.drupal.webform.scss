@@ -1,0 +1,72 @@
+.webform-component {
+  margin: $sp_tiny 0;
+  @include breakpoint($br_phablet) {
+    margin: $sp_small 0;
+  }
+
+  label {
+    display: block;
+    font-weight: 600;
+
+    &.option {
+      display: inline;
+      font-weight: 400;
+    }
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .description {
+    font-size: $fs_tiny;
+    line-height: $lh_tiny;
+    margin: $sp_nano 0 0 0;
+  }
+}
+
+.webform-component-textfield,
+.webform-component-email {
+
+  input {
+    width: 100%;
+  }
+}
+
+
+.webform-component-select {
+
+  select {
+    width: 100%;
+  }
+}
+
+
+.webform-component--group-images {
+
+  .field-prefix {
+    position: absolute;
+    margin-left: $sp_tiny;
+
+    & + input {
+      padding-left: $sp_base + $sp_nano;
+    }
+  }
+}
+
+
+.webform-component-fieldset {
+  border: 0;
+  padding: $sp_small;
+  margin: 0 0 $sp_base 0;
+  background: darken($color_fond,5%);
+
+  legend {
+    @extend %hilite;
+  }
+
+  .webform-component-fieldset {
+    background: darken($color_fond,0%);
+    margin: 0;
+  }
+}

@@ -1,0 +1,107 @@
+// Toggle
+.nav-header-toggle {
+  line-height: $fs_large;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.nav-header-toggle__icon {
+  font-size: $fs_large;
+  vertical-align: top;
+  transition: all $s_fast cubic-bezier(.5,0,.5,1.5);
+
+  .nav-header-toggle:hover &,
+  .js-header-nav--open & {
+    transform: rotate(180deg);
+  }
+  .js-header-nav--open & {
+    color: $color_mute;
+  }
+}
+
+.nav-header-toggle__label {
+  display: inline-block;
+  font-weight: 600;
+  color: $color_mute;
+  margin: 0 0 0 $sp_tiny;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  .nav-header-toggle:hover & {
+    text-decoration: underline;
+  }
+}
+
+// menu
+.nav-header__list {
+  display: block;
+  position: absolute;
+  z-index: 200;
+  padding: $sp_base $sp_medium;
+  margin: 0 0 0 (-$sp_tiny);
+  background: $color_fond;
+  border-color: $color_fond; 
+  border-radius: $border_nano;
+  max-width: 32rem;
+  box-shadow: 0 1px 1rem rgba(#000,.375);
+  transition: all $s_fast cubic-bezier(.5,-1,.5,0);
+  transform: scale(0);
+  transform-origin: $sp_base 0%;
+
+  &::before {
+    @include triangle(
+      $direction: top,
+      $position: top (-$sp_tiny) left ($sp_tiny + $sp_nano),
+      $size: $sp_tiny
+      );
+  }
+
+  .js-header-nav--open & {
+    transition: all $s_fast cubic-bezier(.5,0,.5,1.5);
+    transform: scale(1);
+  }
+}
+
+.nav-header__item {
+  padding: 0 0 $sp_small 0;
+  position: relative;
+
+  &:nth-child(4n+1) {
+    transform: rotate(-2deg);
+  }
+
+  &:nth-child(4n+2) {
+    transform: translateX(-$sp_nano) rotate(2deg);
+  }
+
+  &:nth-child(4n+3) {
+    transform: translateX($sp_nano) rotate(-1deg);
+  }
+
+  &:nth-child(4n+4) {
+    transform: translateX(-$sp_tiny) rotate(2deg);
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.nav-header__a {
+  white-space: nowrap;
+  display: inline-block;
+  color: $color_fond;
+  font-weight: 600;
+  font-size: $fs_medium;
+  background: $color_text;
+  color: $color_fond;
+  padding: 0 $sp_tiny;
+  transition: all $s_blink ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}

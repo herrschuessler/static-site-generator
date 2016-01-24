@@ -1,0 +1,62 @@
+
+//////////////////////////
+// Input elements
+//////////////////////////
+input, select, textarea {
+  border: $border_nano solid $color_line;
+  background: $color_fond;
+  border-radius: $border_nano;
+  padding: $sp_tiny;
+}
+
+input, select {
+  height: $sp_large;
+  padding: 0 $sp_tiny;
+}
+
+input[type="checkbox"], input[type="radio"], input[type="range"], input[type="file"] {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: normal;
+  height: auto;
+}
+
+// remove ff button padding
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+//////////////////////////
+// Select
+//////////////////////////
+select {
+
+}
+
+
+//////////////////////////
+// Labels
+//////////////////////////
+label {
+  &[for] {
+    cursor: pointer;
+  }
+}
+
+//////////////////////////
+// Browser validation
+//////////////////////////
+input:invalid,
+textarea:invalid {
+
+}
+
+//////////////////////////
+// Button
+//////////////////////////
+input[type="submit"] {
+  @extend %button;
+}

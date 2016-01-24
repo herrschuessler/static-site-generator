@@ -1,0 +1,36 @@
+%box-shadow {
+  transition: box-shadow $s_blink;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 2px 5px rgba(#000,.25);
+  }
+}
+
+
+.button,
+%button {
+  @extend %box-shadow;
+  display: inline-block;
+  color: $color_fond;
+  background-color: $color_link;
+  border-radius: $border_small;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: $lh_small;
+  padding: $sp_nano $sp_small;
+  cursor: pointer;
+  transition: all $s_blink;
+  fill: $color_link;
+  appearance: none;
+  border: 0;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  } 
+
+  &.button--wide {
+    padding: $sp_nano $sp_giga;
+  }
+}

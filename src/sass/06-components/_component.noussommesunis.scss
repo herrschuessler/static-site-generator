@@ -1,0 +1,18 @@
+.noussommesunis {
+  transform: rotate(4deg);
+  width: 16rem;
+
+  @include breakpoint($br_max-tablet) {
+    margin: 0 auto $sp_huge auto;
+  }
+
+  @include breakpoint($br_desktop) {
+    position: absolute;
+    top: 5rem;
+    right: 3rem;
+  }
+
+  img {
+    width: 100%;
+  }
+}

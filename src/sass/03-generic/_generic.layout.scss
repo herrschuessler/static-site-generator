@@ -1,0 +1,20 @@
+//////////////////////////
+// viewport
+//////////////////////////
+html {
+	min-height: 100%;
+}
+
+//////////////////////////
+// box model
+//////////////////////////
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+//////////////////////////
+// prevent animations from running on first page load, rmove class with JavaScript
+/////////////////////////
+.preload * {
+  transition: none !important;
+}

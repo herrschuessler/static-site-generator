@@ -1,0 +1,21 @@
+//////////////////////////
+// breakpoints
+//////////////////////////
+
+$br_mobile:       320px;
+$br_phone:        460px;
+$br_phablet:      540px;
+$br_tablet:       780px;
+$br_desktop:      980px;
+$br_wide:         1280px;
+$br_huge:         1560px;
+
+$br_max-mobile:   max-width ($br_phone - 1);
+$br_max-phone:    max-width ($br_phablet - 1);
+$br_max-phablet:  max-width ($br_tablet - 1);
+$br_max-tablet:   max-width ($br_desktop - 1);
+$br_max-desktop:  max-width ($br_wide - 1);
+$br_max-wide:     max-width ($br_huge - 1);
+
+$br_2x: min-resolution 1.5dppx;
+$br_3x: min-resolution 2.5dppx;
