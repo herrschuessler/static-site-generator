@@ -10,8 +10,8 @@ var path            = require('path')
 var paths = {
   src: path.join(config.root.src, config.tasks.svgSprite.css.src, '*.svg'),
   dest: path.join(config.root.dev, config.tasks.css.dest),
-  sprite: path.join('../', config.root.src, config.tasks.svgSprite.dest, 'sprite.svg'),
-  scss: path.join('../../', config.tasks.svgSprite.dest, config.tasks.css.src, '05-objects/_object.svgsprites.scss'),
+  sprite: path.join('../', config.tasks.svgSprite.dest, 'sprite.svg'),
+  scss: path.join('../../', config.root.src, config.tasks.svgSprite.css.scss),
   template: path.join(config.templates, 'svgSprite.template.scss')
 }
 

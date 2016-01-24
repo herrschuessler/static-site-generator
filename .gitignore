@@ -45,5 +45,4 @@ node_modules
 ######################
 stage
 public
-src/sass/svg
-src/sass/vendor-bower
+src/sass/02-tools/_generated.tool.svgsprites.scss

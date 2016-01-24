@@ -27,7 +27,8 @@
         "src": "svg/symbol"
       },
       "css": {
-        "src": "svg/css"
+        "src": "svg/css",
+        "scss": "sass/02-tools/_generated.tool.svgsprites.scss"
       },
       "dest": "img/svg-sprites"
     },
