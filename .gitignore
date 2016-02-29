@@ -41,6 +41,11 @@ Thumbs.db
 node_modules
 *.node
 
+
+# Bower               #
+######################
+bower_components
+
 # Staging files     #
 ######################
 stage
