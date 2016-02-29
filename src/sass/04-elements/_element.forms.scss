@@ -3,18 +3,17 @@
 // Input elements
 //////////////////////////
 input, select, textarea {
-  border: $border_nano solid $color_line;
-  background: $color_fond;
-  border-radius: $border_nano;
-  padding: $sp_tiny;
+
 }
 
 input, select {
-  height: $sp_large;
-  padding: 0 $sp_tiny;
+
 }
 
-input[type="checkbox"], input[type="radio"], input[type="range"], input[type="file"] {
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+input[type="file"] {
   padding: 0;
   margin: 0;
   border: 0;
@@ -58,5 +57,5 @@ textarea:invalid {
 // Button
 //////////////////////////
 input[type="submit"] {
-  @extend %button;
+
 }

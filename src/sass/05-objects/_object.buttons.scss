@@ -1,14 +1,3 @@
-%box-shadow {
-  transition: box-shadow $s_blink;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 2px 5px rgba(#000,.25);
-  }
-}
-
-
-.button,
 %button {
   @extend %box-shadow;
   display: inline-block;
@@ -28,9 +17,5 @@
   &:hover,
   &:focus {
     text-decoration: none;
-  } 
-
-  &.button--wide {
-    padding: $sp_nano $sp_giga;
   }
 }

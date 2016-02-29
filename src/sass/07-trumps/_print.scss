@@ -22,67 +22,13 @@
 	}
 
 	// hide parts
-	.nopr, .embed,
-	.header-buttons,
-	.header-nav,
-	.doc-tools,
-	.read-next,
-	.nav-sub,
-	.nav-abc,
-	.nav-tabs,
-	.section-footer-content,
-	.section-related-content,
-	.section-teaser-slider,
-	.section-social-media,
-	.section-service,
-	.doc-footer,
-	.slider__pager,
-	.slider__controls,
-	.filter,
-	.pagination
-	 {
+	.nopr, .embed {
 		display: none !important;
 	}
 
 	//svg icons
 	svg {
 		fill: #000 !important;
-	}
-
-	// print-specific elements
-	summary,
-	.nav-tabs__panel__title a {
-		padding: 0 !important;
-		margin: 0 !important;
-		font-weight: bold;
-
-		&:before,
-		&:after {
-			display: none !important;
-		}
-	}
-
-	.nav-tabs__panel,
-	.nav-tabs__panel__title {
-		display: block !important;
-	}
-
-	.doc-header {
-		position: relative;
-	}
-
-	.well,
-	.attachment,
-	.accordion__toggle {
-		padding: 0;
-	}
-
-	.accordion__toggle {
-		font-weight: bold;
-	}
-
-	.accordion__panel[style] {
-		max-height: none !important;
 	}
 
 }

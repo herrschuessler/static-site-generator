@@ -150,3 +150,48 @@
     }
   }
 }
+
+
+//////////////////////////
+// Hide Text
+// ---
+// @param [string] $direction: hide left or right
+// ---
+@mixin hide-text($direction:"left") {
+  @if $direction == left {
+    $approximate-em-value: 12px / 1em;
+    $wider-than-any-screen: -9999em;
+    text-indent: $wider-than-any-screen * $approximate-em-value;
+    overflow: hidden;
+    text-align: left;
+  }
+  @else {
+    // slightly wider than the box prevents issues with inline-block elements
+    text-indent: 110%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+
+//////////////////////////
+// Font-face rule generator
+// ---
+// @param [string] $name: the font-family identifier
+// @param [string] $file: the file name without extension
+// @param [string] $folder: the folder below ./fonts/
+// @param [number] $weight: the font-weight
+// @param [string] $style: the font-style
+// ---
+@mixin font-face($name, $file, $folder, $weight:"400", $style:"normal") {
+  $path: "../fonts/" + $folder + "/" + $file;
+  @font-face {
+    font-family: "#{$name}";
+    src: url($path + ".woff2") format('woff2'),
+         url($path + ".woff") format('woff'),
+         url($path + ".ttf")  format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
