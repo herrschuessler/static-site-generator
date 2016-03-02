@@ -1,33 +1,32 @@
 /*! Author: Christoph Schüßler <schreib@herrschuessler.de> */
 
-// bower components
-@import "../../bower_components/susy/sass/susy";
-@import "../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+// node_modules
+@import "./node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 // using ITCSS pattern, see http://technotif.com/manage-large-css-projects-with-itcss/
 // source order within a folder does not matter because cascade only happens between folders
 
 // we are importing all partials in a folder by sass-glob
 
-// SETTINGS contain all global variables
+// SETTINGS contains all global variables
 @import "01-settings/*";
 
-// TOOLS contain functions and mixins
+// TOOLS contains functions and mixins
 @import "02-tools/*";
 
-// GENERIC contain resets, normalize, webfonts etc.
+// GENERIC contains resets, normalize, webfonts etc.
 @import "03-generic/*";
 
-// ELEMENTS contain only raw HTML element selectors
+// ELEMENTS contains only raw HTML element selectors
 @import "04-elements/*";
 
-// OBJECTS contain reusable design patterns
+// OBJECTS contains reusable design patterns
 @import "05-objects/*";
 
-// COMPONENTS contain specific BEM components
+// COMPONENTS contains specific BEM components
 @import "06-components/*";
 
-// import additional bower components below this line!
+// import additional node_modules below this line!
 
-// TRUMPS contain print styles, !important overwrites and shame styles
+// TRUMPS contains print styles, !important overwrites and shame styles
 @import "07-trumps/*";
