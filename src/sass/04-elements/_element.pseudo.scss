@@ -2,12 +2,12 @@
 // selection
 //////////////////////////
 ::-moz-selection {
-	background: $color_brand;
-	color: #fff;
+  color: #fff;
+  background: $color_brand;
 }
 ::selection {
-	background: $color_brand;
-	color: #fff;
+  color: #fff;
+  background: $color_brand;
 }
 
 //////////////////////////
@@ -17,12 +17,12 @@
   color: $color_placeholder;
 }
 :-moz-placeholder {
-  color: $color_placeholder;
   opacity: 1;
+  color: $color_placeholder;
 }
 ::-moz-placeholder {
-  color: $color_placeholder;
   opacity: 1;
+  color: $color_placeholder;
 }
 :-ms-input-placeholder {
   color: $color_placeholder;

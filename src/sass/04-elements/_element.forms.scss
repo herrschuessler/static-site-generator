@@ -2,29 +2,30 @@
 //////////////////////////
 // Input elements
 //////////////////////////
-input, select, textarea {
-
+input,
+select,
+textarea {
 }
 
-input, select {
-
+input,
+select {
 }
 
-input[type="checkbox"],
-input[type="radio"],
-input[type="range"],
-input[type="file"] {
-  padding: 0;
-  margin: 0;
-  border: 0;
+input[type='checkbox'],
+input[type='radio'],
+input[type='range'],
+input[type='file'] {
   line-height: normal;
   height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 // remove ff button padding
 ::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 
 
@@ -32,7 +33,6 @@ input[type="file"] {
 // Select
 //////////////////////////
 select {
-
 }
 
 
@@ -50,12 +50,10 @@ label {
 //////////////////////////
 input:invalid,
 textarea:invalid {
-
 }
 
 //////////////////////////
 // Button
 //////////////////////////
-input[type="submit"] {
-
+input[type='submit'] {
 }

@@ -1,34 +1,57 @@
 @media print {
-	* {
-		background: transparent !important;
-		color: black !important;
-		border-color: black !important;
-		box-shadow:none !important;
-		text-shadow: none !important;
-		filter:none !important;
-		-ms-filter: none !important;
-	}
-	abbr[title]:after { content: " (" attr(title) ")"; }
-	thead { display: table-header-group; }
-	tr, img { page-break-inside: avoid; }
-	img { max-width: 100% !important; }
-	p, h1, h2, h3 { orphans: 3; widows: 3; }
-	h1, h2, h3 { page-break-after: avoid; }
-	body { padding: 2em; }
+  * {
+    color: black !important;
+    border-color: black !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+        filter: none !important;
+    -ms-filter: none !important;
+  }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h1,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  body {
+    padding: 2em;
+  }
 
-	// forms
-	input,select,textarea {
-		border: $border_nano solid #000;
-	}
+  // forms
+  input,
+  select,
+  textarea {
+    border: $border_nano solid #000;
+  }
 
-	// hide parts
-	.nopr, .embed {
-		display: none !important;
-	}
+  // hide parts
+  .nopr,
+  .embed {
+    display: none !important;
+  }
 
-	//svg icons
-	svg {
-		fill: #000 !important;
-	}
-
+  //svg icons
+  svg {
+    fill: #000 !important;
+  }
 }

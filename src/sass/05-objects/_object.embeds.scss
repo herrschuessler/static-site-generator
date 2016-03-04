@@ -3,7 +3,6 @@
 .r-embed {
   position: relative;
   height: 0;
-
   iframe {
     position: absolute;
     top: 0;
@@ -14,15 +13,7 @@
   }
 }
 
-.r-embed--video {
-  padding-bottom: 56.25%; // 16:9
-}
-
-.r-embed--slide {
-  padding-bottom: 75%; // 4:3
-  border: $border_nano solid $color_line;
-}
-
+.r-embed--video,
 .r-embed--16x9 {
   padding-bottom: 56.25%; // 16:9
 }

@@ -4,15 +4,15 @@
 
 // hide text for image replacement with background-image
 %ir {
-  border: 0;
   font: 0/0 a;
-  text-shadow: none;
   color: transparent;
+  border: 0;
+  text-shadow: none;
 }
 
 %pseudo-inline-block {
-  content: '';
   display: inline-block;
+  content: '';
 }
 
 // Hide from both screenreaders and browsers
@@ -26,18 +26,17 @@
 %visuallyhidden,
 .visuallyhidden {
   @include visuallyhidden;
-
   // Extends the .visuallyhidden class to allow the element to be focusable
   // when navigated to via the keyboard
   &.focusable {
     &:active,
     &:focus {
+      position: static;
+      overflow: visible;
       clip: auto;
+      width: auto;
       height: auto;
       margin: 0;
-      overflow: visible;
-      position: static;
-      width: auto;
     }
   }
 }
@@ -57,22 +56,22 @@
 
 // stretch to dimensions of parent
 %stretch {
-  display: block;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  display: block;
 }
 
 // kerning and ligatures (use sparingly, cost-intensive!)
 %kern {
   text-rendering: optimizeLegibility;
   -webkit-font-variant-ligatures: common-ligatures;
-  font-variant-ligatures: common-ligatures;
-  -moz-font-feature-settings: "kern=1";
-  -webkit-font-feature-settings: "kern";
-  -moz-font-feature-settings: "kern";
-  font-feature-settings: "kern";
+          font-variant-ligatures: common-ligatures;
+     -moz-font-feature-settings: 'kern=1';
+  -webkit-font-feature-settings: 'kern';
+     -moz-font-feature-settings: 'kern';
+          font-feature-settings: 'kern';
   font-kerning: normal;
 }

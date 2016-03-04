@@ -1,19 +1,18 @@
 %button {
   @extend %box-shadow;
-  display: inline-block;
-  color: $color_fond;
-  background-color: $color_link;
-  border-radius: $border_small;
   font-weight: 600;
-  white-space: nowrap;
   line-height: $lh_small;
+  display: inline-block;
   padding: $sp_nano $sp_small;
   cursor: pointer;
   transition: all $s_blink;
+  white-space: nowrap;
+  color: $color_fond;
+  border: 0;
+  border-radius: $border_small;
+  background-color: $color_link;
   fill: $color_link;
   appearance: none;
-  border: 0;
-
   &:hover,
   &:focus {
     text-decoration: none;
