@@ -12,7 +12,9 @@
 //////////////////////////
 // Hide element while making it readable for screen readers
 // ---
-@mixin visuallyhidden {
+// @param [bool] $focusable:  Allow the element to be focusable when navigated to via the keyboard
+// ---
+@mixin visuallyhidden($focusable: false) {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -21,10 +23,21 @@
   padding: 0;
   position: absolute;
   width: 1px;
+  @if $focusable {
+    &:active,
+    &:focus {
+      position: static;
+      overflow: visible;
+      clip: auto;
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+  }
 }
 
 //////////////////////////
-// Hide element
+// Hide element from both screenreaders and browsers
 // ---
 @mixin hidden {
   display: none !important;
@@ -44,11 +57,21 @@
 // 1. Needed in WebKit-based browsers because of an implementation bug;
 //    See: https://code.google.com/p/chromium/issues/detail?id=457146
 // ---
-@mixin hide-text {
+@mixin hidden-text {
   overflow: hidden;
   padding: 0; // 1
   text-indent: 101%;
   white-space: nowrap;
+}
+
+//////////////////////////
+// Hide text for image replacement with background-image
+// ---
+@mixin image-replaced {
+  font: 0/0 a;
+  color: transparent;
+  border: 0;
+  text-shadow: none;
 }
 
 //////////////////////////
@@ -60,6 +83,18 @@
 }
 @mixin pseudo-block {
   content: '';
+  display: block;
+}
+
+//////////////////////////
+// Stretch element to fill relative parent
+// ---
+@mixin stretch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: block;
 }
 

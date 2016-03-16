@@ -1,70 +1,71 @@
 //////////////////////////
-// Helpers + extendable classes
+// Clear inner floats
+// ---
+%clearfix {
+  @include clearfix;
+}
+
 //////////////////////////
-
-// hide text for image replacement with background-image
-%ir {
-  font: 0/0 a;
-  color: transparent;
-  border: 0;
-  text-shadow: none;
+// Hide element while making it readable for screen readers
+// ---
+%visuallyhidden {
+  @include visuallyhidden;
+}
+%visuallyhidden-focusable {
+  @include visuallyhidden(true);
 }
 
-%pseudo-inline-block {
-  display: inline-block;
-  content: '';
-}
-
-// Hide from both screenreaders and browsers
+//////////////////////////
+// Hide element from both screenreaders and browsers
+// ---
 %hidden,
-.hidden,
 [hidden] {
   @include hidden;
 }
 
-// Hide only visually, but have it available for screenreaders
-%visuallyhidden,
-.visuallyhidden {
-  @include visuallyhidden;
-  // Extends the .visuallyhidden class to allow the element to be focusable
-  // when navigated to via the keyboard
-  &.focusable {
-    &:active,
-    &:focus {
-      position: static;
-      overflow: visible;
-      clip: auto;
-      width: auto;
-      height: auto;
-      margin: 0;
-    }
-  }
-}
-
-// Hide visually and from screenreaders, but maintain layout
-%invisible,
-.invisible {
+//////////////////////////
+// Make element invisible while maintaining layout
+// ---
+%invisible {
   @include invisible;
 }
 
-// Clearfix
-
-%clearfix,
-.clearfix {
-  @include clearfix;
+//////////////////////////
+// Hide text in element
+// ---
+%hidden-text {
+  @include hidden-text;
 }
 
-// stretch to dimensions of parent
+//////////////////////////
+// Hide text for image replacement with background-image
+// ---
+%image-replaced {
+  @include image-replaced;
+}
+
+//////////////////////////
+// Create visible pseudo elements
+// ---
+%pseudo-inline-block {
+  @include pseudo-inline-block;
+}
+
+%pseudo-block {
+  @include pseudo-block;
+}
+
+//////////////////////////
+// Stretch element to fill relative parent
+// ---
 %stretch {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
+  @include stretch;
 }
 
-// kerning and ligatures (use sparingly, cost-intensive!)
+//////////////////////////
+// Add proper kerning and ligatures
+// Use sparingly, cost-intensive!
+// ---
 %kern {
   text-rendering: optimizeLegibility;
   -webkit-font-variant-ligatures: common-ligatures;
