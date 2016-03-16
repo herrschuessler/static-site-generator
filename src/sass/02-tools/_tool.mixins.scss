@@ -1,20 +1,16 @@
 //////////////////////////
-// Cleafix
+// Clear inner floats
 // ---
 @mixin clearfix {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
+  &::after {
     clear: both;
+    content: '';
+    display: table;
   }
 }
 
-
 //////////////////////////
-// Visibility
+// Hide element while making it readable for screen readers
 // ---
 @mixin visuallyhidden {
   border: 0;
@@ -27,24 +23,41 @@
   width: 1px;
 }
 
+//////////////////////////
+// Hide element
+// ---
 @mixin hidden {
   display: none !important;
   visibility: hidden;
 }
 
+//////////////////////////
+// Make element invisible while maintaining layout
+// ---
 @mixin invisible {
   visibility: hidden;
 }
 
+//////////////////////////
+// Hide text in element
+// ---
+// 1. Needed in WebKit-based browsers because of an implementation bug;
+//    See: https://code.google.com/p/chromium/issues/detail?id=457146
+// ---
+@mixin hide-text {
+  overflow: hidden;
+  padding: 0; // 1
+  text-indent: 101%;
+  white-space: nowrap;
+}
 
 //////////////////////////
-// Pseudo Elements
+// Create visible pseudo elements
 // ---
 @mixin pseudo-inline-block {
   content: '';
   display: inline-block;
 }
-
 @mixin pseudo-block {
   content: '';
   display: block;
@@ -61,13 +74,12 @@
   height: $height;
 }
 
-
 //////////////////////////
 // TRBL / Positioning
 // ---
-
 // Position helper mixin
 // http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
+// ---
 @mixin position($position, $args: ()) {
   $offsets: top right bottom left;
   position: $position;
@@ -109,7 +121,6 @@
   @include position(relative, $args);
 }
 
-
 //////////////////////////
 // CSS Triangle
 // ---
@@ -150,29 +161,6 @@
     }
   }
 }
-
-
-//////////////////////////
-// Hide Text
-// ---
-// @param [string] $direction: hide left or right
-// ---
-@mixin hide-text($direction:"left") {
-  @if $direction == left {
-    $approximate-em-value: 12px / 1em;
-    $wider-than-any-screen: -9999em;
-    text-indent: $wider-than-any-screen * $approximate-em-value;
-    overflow: hidden;
-    text-align: left;
-  }
-  @else {
-    // slightly wider than the box prevents issues with inline-block elements
-    text-indent: 110%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-}
-
 
 //////////////////////////
 // Font-face rule generator
