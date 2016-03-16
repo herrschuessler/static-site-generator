@@ -1,8 +1,8 @@
 a {
-  transition: color .1s ease;
   text-decoration: none;
   color: $color_link;
-  &:hover {
+
+  @include on-event {
     text-decoration: underline;
   }
 }

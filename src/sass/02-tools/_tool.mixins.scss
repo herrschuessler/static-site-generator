@@ -112,8 +112,8 @@
 //////////////////////////
 // TRBL / Positioning
 // ---
-// Position helper mixin
-// http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
+// @author Hugo Giraudel
+// @link http://hugogiraudel.com/2014/05/19/new-offsets-sass-mixin/
 // ---
 @mixin position($position, $args: ()) {
   $offsets: top right bottom left;
@@ -218,3 +218,26 @@
   }
 }
 
+//////////////////////////
+// Event wrapper
+// ---
+// @param [bool] $self (false) - Whether or not to include current selector
+// @author Harry Roberts
+// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+// ---
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
