@@ -1,0 +1,12 @@
+//////////////////////////
+// The basic layout container
+// ---
+.container,
+%container {
+  width: 100%;
+  max-width: $w_max;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter-outside;
+  padding-left: $gutter-outside;
+}

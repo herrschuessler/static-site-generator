@@ -20,7 +20,11 @@ $br_wide_max:     max-width ($br_huge - 1);
 $br_2x: min-resolution 1.5dppx;
 $br_3x: min-resolution 2.5dppx;
 
-
-//layout dimensions
+// layout dimensions
+//
 $w_min:     $br_mobile;
 $w_max:     $br_wide;
+
+// gutters
+//
+$gutter-outside: 10px;
