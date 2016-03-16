@@ -1,16 +1,20 @@
 //////////////////////////
-// viewport
-//////////////////////////
+// The Root element
+// ---
+// 1. The document should be at least as high as the viewport
+// 2. Set up a decent box model on the root element
 html {
-	min-height: 100%;
+	min-height: 100%; // 1
+  box-sizing: border-box; // 2
 }
 
 //////////////////////////
-// box model
-//////////////////////////
+// Make all elements from the DOM inherit from the parent box-sizing
+// Since `*` has a specificity of 0, it does not override the `html` value
+// making all elements inheriting from the root box-sizing value
+// See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+// ---
 *, *:before, *:after {
-	box-sizing: border-box;
-}
 
 //////////////////////////
 // prevent animations from running on first page load, rmove class with JavaScript
