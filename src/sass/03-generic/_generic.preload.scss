@@ -1,0 +1,7 @@
+//////////////////////////
+// prevent animations from running on first page load
+// REMOVE THIS CLASS FIRST THING ON LOAD WITH JavaScript!
+// ---
+.preload * {
+  transition: none !important;
+}

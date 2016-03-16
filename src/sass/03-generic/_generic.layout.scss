@@ -15,10 +15,5 @@ html {
 // See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
 // ---
 *, *:before, *:after {
-
-//////////////////////////
-// prevent animations from running on first page load, rmove class with JavaScript
-/////////////////////////
-.preload * {
-  transition: none !important;
+	box-sizing: inherit;
 }
